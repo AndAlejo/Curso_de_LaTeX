@@ -1,0 +1,181 @@
+%documento de clase
+\documentclass[a4paper,12pt]{article}
+%paquetes
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[total={18cm, 21cm}, top=2cm, left=2cm]{geometry}
+\usepackage{amsmath, amssymb, amsfonts, latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+ \usepackage{color}
+\usepackage{multicol}
+\usepackage{nicefrac}
+\usepackage{multirow}
+\usepackage[x11names,table]{xcolor}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{url}
+%comandos
+\parindent = 0mm
+
+\author{Andrés Soledispa}
+
+\title{Hola}
+
+\date{\today}
+\definecolor{db}{RGB}{128,128,0}
+\definecolor{dh}{RGB}{0,128,0}
+
+%contenido
+\begin{document}
+\maketitle
+\begin{tabular}{|c|c|c|c|}
+\hline Primera & Segunda & Tercera & Cuarta \\ \cline{1-3}
+A & B & & C \\ \hline
+& D & E & F \\ \hline
+G & & & H \\ \hline
+\end{tabular}
+%para poner un parrafo
+ \begin{center}
+ \begin{tabular}{ | l | l | l | p{5cm} |}
+ % p{5cm}: Quiere decir que me escriba en un parrafo de 5cm
+ \hline
+ Day & Min Temp & Max Temp & Summary \\ \hline
+
+ Monday & \(11\)C & \(22\)C & A clear day with lots of sunshine.
+ However, the strong breeze will bring down the temperatures. \\ \hline
+ Tuesday & \(9\)C & \(19\)C & Cloudy with rain, across many northern regions. Clear spells
+ across most of Scotland and Northern Ireland,
+ but rain reaching the far northwest. \\ \hline
+ Wednesday & \(10\)C & \(21\)C & Rain will still linger for the morning.
+ Conditions will improve by early afternoon and continue
+ throughout the evening. \\
+ \hline
+ \end{tabular}
+ \end{center}
+%para poner un guión o punto sin tener que editar todo      (fijar lo que está al lado de @{-})
+\begin{center}
+\begin{tabular}{|r @{-} l|} %Para alinear y poner lo que quiero eque este entre la mitad {.}
+\hline
+\(1\) & \(4\) \\ \hline
+\(2\) & \(54\) \\ \hline
+\(Andres\) & \(7890\) \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{tabular}{|l|l|c|} \hline
+\multicolumn{3}{|c|}{National Basketball Asociation}\\ \hline \hline \textsf{Jugador} & \textsf{Numero} & \textsf{Campeonato}\\ \hline
+\multicolumn{2}{l}{\small *Andres Soledispa MVP}
+\end{tabular}
+
+\begin{center}
+\begin{tabular}{ |l|l|l| }
+\hline
+\multicolumn{3}{ |c| }{Team sheet} \\
+\hline
+Goalkeeper & GK & Paul Robinson \\ \hline
+\multirow{4}{*}{Defenders} & LB & Lucus Radebe \\ %\multirow: para combinar filas
+& DC & Michael Duburry \\
+& DC & Dominic Matteo \\
+& RB & Didier Domi \\
+\hline
+\multirow{3}{*}{Midfielders} & \multirow{3}{*}{MC} & David Batty \\
+& & Eirik Bakke \\
+& & Jody Morris \\
+\hline
+Forward & FW & Jamie McMaster \\ \hline
+\multirow{2}{*}{Strikers} & \multirow{2}{*}{ST} & Alan Smith \\
+& & Mark Viduka \\
+\hline
+\end{tabular}
+\end{center}
+%aqui puse (es-cuadro) en babel
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|} \hline
+\(p\) & \(q\) & \(p \to q\) \\
+\hline
+0 & 0 & 1 \\
+0 & 1 & 1 \\
+\cline{1-2}
+1 & 0 & 0 \\
+ 1 & 1 & 1 \\
+ \hline
+ \end{tabular}
+ \caption{Tabla de verdad para \(p \to q\).}
+ \label{tabla:01}
+ \end{table}
+%en el preambulo ubico
+\begin{center}
+\begin{tabular}{| >{\columncolor{db!20}} c | c | >{\color{magenta}} c |}
+\hline
+\rowcolor{db}
+\color{yellow!30!white} \textbf{Temperatura} &
+\color{yellow!30!white} \textbf{Tiempo} &
+\color{yellow!30!white} \textbf{Total} \\ \hline
+1 & \(245 \pm 5.5\) & 3 \\ \hline
+2 & \(260 \pm 5.5\) & \cellcolor{white!70!dh}\color{dh}{8} \\ \hline % para pintar una sola
+celda
+ 3 & \(275 \pm 5.5\) & 8 \\ \hline
+ 4 & \(287 \pm 5.5\) & 8 \\ \hline
+ \end{tabular}
+ \end{center}
+
+\begin{longtable}{lll}
+\caption{Lista de Estudiantes} \\
+\toprule
+\textbf{Nombre} & \textbf{Carrera} & \textbf{Correo electrónico} \\
+\midrule
+\endfirsthead
+%
+\multicolumn{3}{l}{\footnotesize Viene de la página anterior} \\
+\toprule
+\textbf{Nombre} & \textbf{Carrera} & \textbf{Correo Electrónico} \\ \midrule
+\endhead
+\bottomrule \multicolumn{3}{r}{\footnotesize Continua en la siguiente página}
+\endfoot
+\bottomrule
+\endlastfoot
+%
+Andrés Soledispa & Matemática & \url{asoledispatiban@gmail.com}\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+Andrés Soledispa & Matemática & \url{mate6666oz@hotmail.com}
+\\
+\end{longtable}
+
+\end{document}
